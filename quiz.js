@@ -1,7 +1,3 @@
-//YOU WILL NEED TO USE REPEAT METHOD ON STRING
-//BE SURE TO CONVERT CHAR INTO STRING
-//USE TERNARY
-//CONDENSE EVENT LISTENERS
 
 
 //Initialize object
@@ -57,24 +53,6 @@ num.addEventListener('keypress', function(event) {
 
 //Grow the Tree
 
-// function growTree(tree) {
-//     var output = '';
-//     for (var i = 0; i < tree.height; i++) {
-//         console.log(output += tree.leaf);
-//     }
-//  }
-
-// function growTree(tree) {
-//     var output = '';
-//     var outputArranged = '';
-//     for (var i = 0; i < tree.height; i++) {
-//     outputArranged = output += tree.leaf;
-//     console.log(' '.repeat(tree.height - (i / 2)) + outputArranged);
-//    //console.log(' '.repeat(parseFloat((tree.height - (i / 2))))  + outputArranged)  need an if/else based on modulo of height/2;
-//     }
-//  }
-
-// growTree(tree);
 
 //how to write the above fn so it doesn't use a parameter that's already specific to an argument?
 
@@ -96,5 +74,10 @@ num.addEventListener('keypress', function(event) {
  (growTree(tree));
 
 
-
+//Left to do, in order of importance:
+//1. realign rows when i is GREATER THAN 1; mess with spacing
+//2. add remaining conditionals (when num is NAN, char is > 1)
+//3. clean up event listeners
+//4. explore ternaries
+//5.
 
