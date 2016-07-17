@@ -1,5 +1,4 @@
 
-
 //Initialize object
 
 var tree = {}
@@ -10,7 +9,7 @@ var tree = {}
 
 var char = document.getElementById('character');
 char.addEventListener('input', function(event) {
-   tree.leaf = char.value;
+   tree.species = char.value;
 })
 
 var num = document.getElementById('height');
@@ -26,58 +25,42 @@ growButt.addEventListener('click', function(event) {
         growTree(tree);
     }
     else {
-      alert('You need a value in both fields, dummy');
+      alert('Aw, shucks. You need a value in both fields.');
     }})
 
-//Initialize function on keypress, only while pointer remains in one of the two input fields
+//Initialize function on keypress, only while pointer remains in one of the two input fields and both fields are populated
 
 char.addEventListener('keypress', function(event) {
     if (event.keyCode === 13 && char.value != '' && num.value !='') {
-        // console.log(growTree(tree));
-        // console.log('working');
+        growTree(tree);
     }
     else if (event.keyCode === 13) {
-    alert('You need a value in both fields, dummy');
+    alert('Aw, shucks. You need a value in both fields.');
     }
 })
 
 num.addEventListener('keypress', function(event) {
     if (event.keyCode === 13 && char.value != '' && num.value !='') {
         growTree(tree);
-        // console.log('poo');
+
     }
     else if (event.keyCode === 13) {
-    alert('You need a value in both fields, dummy');
+    alert('Aw, shucks. You need a value in both fields.');
     }
 })
 
-//Grow the Tree
-
-
-//how to write the above fn so it doesn't use a parameter that's already specific to an argument?
-
- function growTree(tree) {
-    var output = '';
-    var outputArranged = ' '
-
-    for (var i = 0; i < tree.height; i++) {
-        if (i !== 0) {
-    output += tree.leaf + tree.leaf;
-        }
-        else {
-            output += tree.leaf;
-        }
-    console.log(' '.repeat(tree.height - (Math.ceil(i / 2))) + output);
-    }
+//Grow tree
+ function growTree(arg) {
+  var space = ' ';
+    for (var i = 1; i <= arg.height; i++) {
+    console.log(space.repeat(arg.height - i) + arg.species.repeat(i * 2 - 1));
+ }
  }
 
- (growTree(tree));
 
 
-//Left to do, in order of importance:
-//1. realign rows when i is GREATER THAN 1; mess with spacing
-//2. add remaining conditionals (when num is NAN, char is > 1)
-//3. clean up event listeners
-//4. explore ternaries
-//5.
+// Add remaining conditions (if height = NAN, char > 1)
+// Clean up event listeners
+// Is there a way to make this universal (i.e., not dependent on obj passed in having a height or species?)
+
 
