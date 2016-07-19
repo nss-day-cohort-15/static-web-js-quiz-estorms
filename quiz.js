@@ -17,16 +17,37 @@ num.addEventListener('input', function(event){
     tree.height = Number(num.value);
 })
 
-//Initialize function on button click
+//Initialize function on button click, as long as both fields are populated
+
+// var growButt = document.getElementById('growButton');
+// growButt.addEventListener('click', function(event) {
+//     if (num.value != '' && char.value != '') {
+//         growTree(tree);
+//     }
+//     else {
+//       alert('Aw, shucks. You need a value in both fields.');
+//     }})
+
 
 var growButt = document.getElementById('growButton');
 growButt.addEventListener('click', function(event) {
     if (num.value != '' && char.value != '') {
         growTree(tree);
     }
+
     else {
       alert('Aw, shucks. You need a value in both fields.');
     }})
+
+// var growButt = document.getElementById('growButton');
+// growButt.addEventListener('click', function(event) {
+//     if (isNaN(num.value) === false) {
+//         growTree(tree);
+//     }
+//     else {
+//       alert("That's not a number. Try following the instructions next time.");
+//     }})
+
 
 //Initialize function on keypress, only while pointer remains in one of the two input fields and both fields are populated
 
@@ -49,6 +70,9 @@ num.addEventListener('keypress', function(event) {
     }
 })
 
+//Add event listener to reset button that clears console as well as field values
+
+
 //Grow tree
  function growTree(arg) {
   var space = ' ';
@@ -61,6 +85,6 @@ num.addEventListener('keypress', function(event) {
 
 // Add remaining conditions (if height = NAN, char > 1)
 // Clean up event listeners
-// Is there a way to make this universal (i.e., not dependent on obj passed in having a height or species?)
+
 
 
