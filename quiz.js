@@ -31,34 +31,33 @@ num.addEventListener('input', function(event){
 
 var growButt = document.getElementById('growButton');
 growButt.addEventListener('click', function(event) {
-    if (num.value != '' && char.value != '') {
-        growTree(tree);
+
+    if (num.value === '' || char.value === '') {
+        alert('You need a value in both fields. How about following the instructions next time.');
+    }
+
+    else if (isNaN(num.value) === true) {
+        alert("You didn't enter a number in the field labeled 'Number.' How about following the instructions next time.");
     }
 
     else {
-      alert('Aw, shucks. You need a value in both fields.');
+        // if (num.value !== '' && char.value !== '' && isNaN(num.value) === true) {
+        // growTree(tree);
+        growTree(tree);
     }})
-
-// var growButt = document.getElementById('growButton');
-// growButt.addEventListener('click', function(event) {
-//     if (isNaN(num.value) === false) {
-//         growTree(tree);
-//     }
-//     else {
-//       alert("That's not a number. Try following the instructions next time.");
-//     }})
 
 
 //Initialize function on keypress, only while pointer remains in one of the two input fields and both fields are populated
 
 char.addEventListener('keypress', function(event) {
-    if (event.keyCode === 13 && char.value != '' && num.value !='') {
+   if (event.keyCode === 13 && char.value != '' && num.value !='') {
         growTree(tree);
+
     }
     else if (event.keyCode === 13) {
     alert('Aw, shucks. You need a value in both fields.');
-    }
-})
+    }})
+
 
 num.addEventListener('keypress', function(event) {
     if (event.keyCode === 13 && char.value != '' && num.value !='') {
@@ -69,8 +68,6 @@ num.addEventListener('keypress', function(event) {
     alert('Aw, shucks. You need a value in both fields.');
     }
 })
-
-//Add event listener to reset button that clears console as well as field values
 
 
 //Grow tree
